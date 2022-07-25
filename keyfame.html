@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aaa {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            background-color: transparent;
+        }
+
+        .aaa::after {
+            content: "";
+            top: 0;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            width: 120%;
+            height: 120%;
+
+            z-index: 10;
+        }
+
+        @keyframes abc {
+            0% {
+                width: 0;
+                height: 0;
+            }
+
+            100% {
+                background-color: red;
+            }
+        }
+
+        .aaa:hover ::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0%;
+            bottom: 0;
+            width: 120%;
+            height: 100%;
+            background-color: rgb(255, 255, 255, 0.5);
+            transition: none;
+            z-index: 100;
+            animation: abc 0.4s linear;
+            animation-iteration-count: 1;
+        }
+    </style>
+
+</head>
+<body>
+<div class="aaa"><button>lol</button></div>
+
+
+</body>
+</html>
